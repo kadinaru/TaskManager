@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.taskmanager.tasklist.MainController">
+
+    <!-- Таблица по центру -->
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn fx:id="colId" text="ID"/>
+                <TableColumn fx:id="colName" text="Название"/>
+                <TableColumn fx:id="colTime" text="Время"/>
+                <TableColumn fx:id="colExecutor" text="Исполнитель"/>
+                <TableColumn fx:id="colStatus" text="Статус"/>
+                <TableColumn fx:id="colDue" text="Срок"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- Панель справа -->
+    <right>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Добавить" onAction="#onAdd" maxWidth="Infinity"/>
+            <Button text="Изменить" onAction="#onEdit" maxWidth="Infinity"/>
+            <TextField fx:id="tfSearch" promptText="Поиск" onKeyReleased="#onSearch"/>
+            <ChoiceBox fx:id="cbSource"/>
+        </VBox>
+    </right>
+
+
+</BorderPane>
